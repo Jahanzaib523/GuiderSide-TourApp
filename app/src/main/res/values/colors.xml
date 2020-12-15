@@ -3,4 +3,5 @@
     <color name="colorPrimary">#444444</color>
     <color name="colorPrimaryDark">#444444</color>
     <color name="colordrawer">#FBFBFB</color>
+    <color name="completedbtncolor">#46DD89</color>
 </resources>

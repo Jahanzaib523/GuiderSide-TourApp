@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context="com.semester_project.smd_project.Activities.SignIn">
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -60,6 +61,7 @@
                     android:text=" Sign In">
                 </TextView>
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -67,11 +69,14 @@
                 android:id="@+id/myinfo"
                 android:orientation="vertical"
                 android:layout_weight=".7">
+
                 <EditText
                     android:layout_width="240dp"
                     android:layout_height="40dp"
-                    android:hint="Name"
+                    android:hint="  Name"
+                    android:id="@+id/username"
                     android:textSize="15dp"
+                    android:drawableLeft="@drawable/profile"
                     android:background="@drawable/roundedtextview_black"
                     android:textColor="@android:color/black"
                     android:padding="10dp">
@@ -80,12 +85,14 @@
                     android:layout_width="240dp"
                     android:layout_height="40dp"
                     android:layout_marginTop="15dp"
+                    android:id="@+id/emailid"
+                    android:drawableLeft="@drawable/email"
                     android:background="@drawable/roundedtextview_black"
                     android:textColor="@android:color/black"
                     android:textAllCaps="false"
                     android:padding="10dp"
                     android:textSize="15dp"
-                    android:hint="Email">
+                    android:hint="  Email">
                 </EditText>
                 <EditText
                     android:layout_width="240dp"
@@ -94,9 +101,13 @@
                     android:background="@drawable/roundedtextview_black"
                     android:textColor="@android:color/black"
                     android:textAllCaps="false"
+                    android:id="@+id/password1"
                     android:padding="10dp"
+                    android:inputType="textPassword"
+                    android:drawableLeft="@drawable/password"
                     android:textSize="15dp"
-                    android:hint="Password">
+                    android:drawableRight="@drawable/eye"
+                    android:hint="  Password">
                 </EditText>
                 <EditText
                     android:layout_width="240dp"
@@ -107,7 +118,11 @@
                     android:textColor="@android:color/black"
                     android:textAllCaps="false"
                     android:padding="10dp"
-                    android:hint="Re-Enter Password">
+                    android:inputType="textPassword"
+                    android:drawableLeft="@drawable/password"
+                    android:id="@+id/password2"
+                    android:drawableRight="@drawable/eye"
+                    android:hint="  Confirm Password">
                 </EditText>
             </LinearLayout>
 

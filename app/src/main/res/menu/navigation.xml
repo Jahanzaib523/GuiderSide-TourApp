@@ -14,21 +14,15 @@
         >
     </item>
     <item
-        android:id="@+id/createtrip"
-        android:title="Create Trip"
-        android:icon="@drawable/createtrip"
+        android:id="@+id/completedorders"
+        android:title="Completed Orders"
+        android:icon="@drawable/completedorders"
         >
     </item>
     <item
         android:id="@+id/wallet"
         android:title="Wallet"
         android:icon="@drawable/wallet_balance"
-        >
-    </item>
-    <item
-        android:id="@+id/mytrips"
-        android:title="My Trips"
-        android:icon="@drawable/mytrips"
         >
     </item>
     <item

@@ -38,6 +38,7 @@
             android:layout_height="wrap_content"
             android:text="Jahanzaib"
             android:textStyle="bold"
+            android:id="@+id/mainusername"
             android:padding="5dp"
             android:textColor="@android:color/white"
             android:layout_marginTop="6dp"
@@ -56,6 +57,7 @@
                     android:layout_height="wrap_content"
                     android:text="jahanzaibpalh@yahoo.com"
                     android:textStyle="bold"
+                    android:id="@+id/mainemailid"
                     android:padding="5dp"
                     android:textColor="@android:color/white"
                     android:textSize="16dp">
@@ -84,6 +86,7 @@
         android:layout_below="@id/l1"
         android:orientation="vertical"
         android:weightSum="5">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -122,6 +125,21 @@
                 </TextView>
             </LinearLayout>
         </LinearLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginBottom="20dp">
+
+            <ProgressBar
+                android:id="@+id/progressbar3"
+                android:layout_width="28dp"
+                android:layout_height="31dp"
+                android:visibility="gone"
+                android:layout_gravity="center">
+
+            </ProgressBar>
+        </RelativeLayout>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -129,14 +147,14 @@
             android:layout_weight="0.4">
             <EditText
                 android:layout_width="300dp"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
                 android:text="Jahanzaib"
                 android:id="@+id/user"
                 android:focusable="false"
                 android:enabled="false"
                 android:padding="10dp"
                 android:gravity="bottom|top|center"
-                android:drawableLeft="@drawable/profile"
+                android:drawableLeft="@drawable/face"
                 android:background="@drawable/textviewrounded">
             </EditText>
         </LinearLayout>
@@ -147,7 +165,7 @@
             android:layout_weight="0.4">
             <EditText
                 android:layout_width="300dp"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
                 android:text="Jahanzaibpalh@yahoo.com"
                 android:focusable="false"
                 android:id="@+id/email"
@@ -159,13 +177,77 @@
             </EditText>
         </LinearLayout>
         <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="0.4"
+            android:gravity="center">
+            <LinearLayout
+                android:layout_width="140dp"
+                android:layout_height="40dp">
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/age1"
+                    android:hint="Age"
+                    android:layout_gravity="center"
+                    android:focusable="false"
+                    android:enabled="false"
+                    android:padding="10dp"
+                    android:gravity="bottom|top|center"
+                    android:drawableLeft="@drawable/profile"
+                    android:background="@drawable/textviewrounded">
+                </EditText>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="10dp"
+                android:layout_height="50dp">
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center">
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/budget1"
+                    android:hint="Budget"
+                    android:focusable="false"
+                    android:enabled="false"
+                    android:padding="10dp"
+                    android:gravity="bottom|top|center"
+                    android:drawableLeft="@drawable/budget"
+                    android:background="@drawable/textviewrounded">
+                </EditText>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_weight="0.4">
+            <EditText
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:id="@+id/experience1"
+                android:hint="Experience"
+                android:padding="10dp"
+                android:focusable="false"
+                android:enabled="false"
+                android:gravity="bottom|top|center"
+                android:drawableLeft="@drawable/experience"
+                android:background="@drawable/textviewrounded">
+            </EditText>
+        </LinearLayout>
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_weight="0.4">
             <EditText
                 android:layout_width="300dp"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
                 android:text="+923473300523"
                 android:padding="10dp"
                 android:focusable="false"
@@ -183,7 +265,7 @@
             android:layout_weight="0.4">
             <EditText
                 android:layout_width="300dp"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
                 android:text="Address"
                 android:padding="10dp"
                 android:focusable="false"
@@ -201,7 +283,7 @@
             android:layout_weight="0.8">
             <EditText
                 android:layout_width="300dp"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
                 android:text="Pakistan"
                 android:padding="10dp"
                 android:focusable="false"

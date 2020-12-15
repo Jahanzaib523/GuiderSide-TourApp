@@ -1,8 +1,5 @@
 package com.semester_project.smd_project;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Guider_info {
     private String Name;
     private String Age;

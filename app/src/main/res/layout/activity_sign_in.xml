@@ -71,22 +71,28 @@
                 <EditText
                     android:layout_width="240dp"
                     android:layout_height="40dp"
-                    android:hint="Email"
+                    android:hint="  Email"
+                    android:drawableLeft="@drawable/email"
+                    android:id="@+id/useremail"
                     android:textSize="15dp"
                     android:background="@drawable/textviewrounded"
                     android:textColor="@android:color/black"
-                    android:padding="10dp">
+                    android:padding="5dp">
                 </EditText>
                 <EditText
                     android:layout_width="240dp"
                     android:layout_height="40dp"
                     android:layout_marginTop="15dp"
                     android:textSize="15dp"
+                    android:drawableLeft="@drawable/password"
                     android:background="@drawable/textviewrounded"
                     android:textColor="@android:color/black"
                     android:textAllCaps="false"
-                    android:padding="10dp"
-                    android:hint=" Password">
+                    android:id="@+id/userpassword"
+                    android:padding="5dp"
+                    android:inputType="textPassword"
+                    android:drawableRight="@drawable/eye"
+                    android:hint="  Password">
                 </EditText>
             </LinearLayout>
             <LinearLayout
@@ -182,5 +188,18 @@
                 </TextView>
             </LinearLayout>
         </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center">
+        <ProgressBar
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            android:id="@+id/progressbar1">
+        </ProgressBar>
     </LinearLayout>
 </RelativeLayout>

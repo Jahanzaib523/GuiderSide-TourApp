@@ -12,11 +12,7 @@
         android:orientation="vertical"
         android:background="@drawable/homepage"
         android:gravity="center">
-        <ProgressBar
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:id="@+id/progressbar">
-        </ProgressBar>
+
         <TextView
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"

@@ -8,18 +8,18 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="60dp"
         android:id="@+id/actionbar"
         >
         <LinearLayout
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_width="wrap_content"
-            android:layout_marginTop="26dp"
+            android:gravity="center"
             android:layout_marginLeft="10dp"
             >
             <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:id="@+id/barsid"
                 android:src="@drawable/drawer_bars">
             </ImageView>
@@ -34,16 +34,16 @@
                 android:layout_height="wrap_content"
                 android:text="Safar"
                 android:textColor="#444444"
-                android:textSize="30dp"
+                android:textSize="20dp"
                 android:textStyle="bold"
                 android:fontFamily="casual">
             </TextView>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Customer"
+                android:text="Guider"
                 android:textColor="#0096D6"
-                android:textSize="30dp"
+                android:textSize="20dp"
                 android:textStyle="bold"
                 android:fontFamily="casual">
             </TextView>

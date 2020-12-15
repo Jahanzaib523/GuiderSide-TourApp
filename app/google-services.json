@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "452218998038",
+    "firebase_url": "https://iconic-ruler-283416-default-rtdb.firebaseio.com",
+    "project_id": "iconic-ruler-283416",
+    "storage_bucket": "iconic-ruler-283416.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:452218998038:android:d1f7698379d6af245ad437",
+        "android_client_info": {
+          "package_name": "com.myapp.spmproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "452218998038-91gtcuvj8rophlh67vucpiarbsqesca5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhlQQHjDwg2ktidOYBgdr_Q_fl0L-ZTUI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "452218998038-91gtcuvj8rophlh67vucpiarbsqesca5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:452218998038:android:188e9e8ecc5846fc5ad437",
+        "android_client_info": {
+          "package_name": "com.semester_project.smd_project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "452218998038-91gtcuvj8rophlh67vucpiarbsqesca5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhlQQHjDwg2ktidOYBgdr_Q_fl0L-ZTUI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "452218998038-91gtcuvj8rophlh67vucpiarbsqesca5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

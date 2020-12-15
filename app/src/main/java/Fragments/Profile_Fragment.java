@@ -1,48 +1,51 @@
 package Fragments;
 
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.ImageDecoder;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.method.KeyListener;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.Switch;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.mikhaellopez.circularimageview.CircularImageView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.semester_project.smd_project.R;
-
-import java.awt.font.TextAttribute;
-import java.net.URI;
+import com.squareup.picasso.Picasso;
 
 import de.hdodenhof.circleimageview.CircleImageView;
-
 import static android.app.Activity.RESULT_OK;
-import static androidx.core.content.ContextCompat.getSystemService;
 
 public class Profile_Fragment extends Fragment
 {
-    TextView editprofile_, cancelprofileeditbtn;
+    TextView editprofile_, cancelprofileeditbtn, mainid, mainname;
     Button savebtn;
-    EditText user, email, phone, address, country;
+    EditText user, email, phone, address, country, age_, experience_, budget_;
     CircleImageView coverphoto, profilepic, cicularprofilepicture;
     static final int PICK_IMG = 1, PICK_IMG1 = 2;
+    ProgressBar progress;
     Uri photo;
     Bitmap xyz;
+    String UID;
     LinearLayout coverpic;
+    private FirebaseDatabase database;
+    private DatabaseReference databaseReference;
 
     public Profile_Fragment()
     {
@@ -54,8 +57,9 @@ public class Profile_Fragment extends Fragment
     {
         // Inflate the layout for this fragment
         View root = inflater.inflate(R.layout.profile_fragment, container, false);
-        getActivity().setTitle("Profile");
 
+        mainid = root.findViewById(R.id.mainemailid);
+        mainname = root.findViewById(R.id.mainusername);
         editprofile_ = root.findViewById(R.id.editprofile);
         cancelprofileeditbtn = root.findViewById(R.id.cancelprofileedit);
         savebtn = root.findViewById(R.id.saveprofilebtn);
@@ -68,6 +72,45 @@ public class Profile_Fragment extends Fragment
         profilepic = root.findViewById(R.id.profilepictureicon);
         coverpic = root.findViewById(R.id.l1);
         cicularprofilepicture = root.findViewById(R.id.pic);
+        age_ = root.findViewById(R.id.age1);
+        budget_ = root.findViewById(R.id.budget1);
+        experience_ = root.findViewById(R.id.experience1);
+        progress = root.findViewById(R.id.progressbar3);
+
+        database = FirebaseDatabase.getInstance();
+        databaseReference = database.getReference("GUIDER");
+
+        FirebaseUser user_1  = FirebaseAuth.getInstance().getCurrentUser();
+        UID = user_1.getEmail();
+        progress.setVisibility(View.VISIBLE);
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for(DataSnapshot d : snapshot.getChildren())
+                {
+                  if(d.child("useremail").getValue().equals(UID))
+                  {
+                      user.setText(d.child("username").getValue(String.class));
+                      email.setText(d.child("useremail").getValue(String.class));
+                      phone.setText(d.child("phone").getValue(String.class));
+                      address.setText(d.child("address").getValue(String.class));
+                      country.setText(d.child("country").getValue(String.class));
+                      mainid.setText(d.child("useremail").getValue(String.class));
+                      mainname.setText(d.child("username").getValue(String.class));
+                      experience_.setText(d.child("experience").getValue(String.class) + " Years");
+                      budget_.setText(d.child("budget").getValue(String.class));
+                      age_.setText(d.child("age").getValue(String.class) + " YO");
+                      Picasso.get().load(d.child("profilepic").getValue(String.class)).into(cicularprofilepicture);
+                  }
+                }
+                progress.setVisibility(View.GONE);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
         profilepic.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -100,6 +143,9 @@ public class Profile_Fragment extends Fragment
                     set_edittext_disable(phone, true);
                     set_edittext_disable(address, true);
                     set_edittext_disable(country, true);
+                    set_edittext_disable(age_, true);
+                    set_edittext_disable(experience_, true);
+                    set_edittext_disable(budget_,true );
                     editprofile_.setText("Cancel");
                     editprofile_.setTextSize(16);
                 }
@@ -113,6 +159,9 @@ public class Profile_Fragment extends Fragment
                     set_edittext_disable(phone, false);
                     set_edittext_disable(address, false);
                     set_edittext_disable(country, false);
+                    set_edittext_disable(age_, false);
+                    set_edittext_disable(experience_, false);
+                    set_edittext_disable(budget_,false);
                 }
             }
         });
@@ -128,6 +177,9 @@ public class Profile_Fragment extends Fragment
                 set_edittext_disable(phone, false);
                 set_edittext_disable(address, false);
                 set_edittext_disable(country, false);
+                set_edittext_disable(age_, false);
+                set_edittext_disable(experience_, false);
+                set_edittext_disable(budget_,false);
             }
         });
 
@@ -142,6 +194,9 @@ public class Profile_Fragment extends Fragment
                 set_edittext_disable(phone, false);
                 set_edittext_disable(address, false);
                 set_edittext_disable(country, false);
+                set_edittext_disable(age_, false);
+                set_edittext_disable(experience_, false);
+                set_edittext_disable(budget_,false);
             }
         });
         return root;
@@ -175,11 +230,9 @@ public class Profile_Fragment extends Fragment
                 BitmapDrawable background = new BitmapDrawable(xyz);
                 coverpic.setBackgroundDrawable(background);
             }
-            catch(Exception e)
-            {
+            catch(Exception e) {
                 e.getStackTrace();
             }
-
         }
     }
 
