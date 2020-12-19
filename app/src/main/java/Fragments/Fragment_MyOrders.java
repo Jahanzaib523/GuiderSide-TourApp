@@ -140,6 +140,8 @@ public class Fragment_MyOrders extends Fragment
                 filter(s.toString());
             }
         });
+
+        progress.setVisibility(View.GONE);
     }
 
     public  void filter(String txt)

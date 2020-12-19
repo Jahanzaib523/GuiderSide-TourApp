@@ -244,6 +244,7 @@ public class MainActivity extends AppCompatActivity
                 .setAutoCancel(true)
                 .setContentText(guiderID + " just placed an order.");
         NotificationManagerCompat managerCompat = NotificationManagerCompat.from(getApplicationContext());
+        builder.setPriority(managerCompat.IMPORTANCE_MAX);
         managerCompat.notify((int) System. currentTimeMillis (), builder.build());
     }
 
@@ -271,6 +272,7 @@ public class MainActivity extends AppCompatActivity
                     }
                     progress.setVisibility(View.GONE);
                 }
+                progress.setVisibility(View.GONE);
             }
 
             @Override

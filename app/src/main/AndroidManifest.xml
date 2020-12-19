@@ -7,8 +7,8 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/icon"
-        android:label="Safar Guider"
+        android:icon="@drawable/guide"
+        android:label="Guider.pk"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Activities.ForgotPasswordRecovery"></activity>
